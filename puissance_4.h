@@ -33,6 +33,11 @@ typedef	struct s_game
 	t_sprite	*sprt;
 }	t_game;
 
+typedef struct s_player
+{
+	int nbr_win;
+	int tok_placed;
+}	t_player;
 
 int		ask_size_grid(t_game *game);
 int		check_grid_size(int column, int row);
