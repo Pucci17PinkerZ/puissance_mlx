@@ -1,4 +1,4 @@
-
+#include "puissance_4.h"
 
 int main(void)
 {
@@ -8,7 +8,6 @@ int main(void)
 	if (ask_size_grid(&game))
 		return (printf("pas good frrr"));
 }
-
 
 int	ask_size_grid(t_game *game)
 {
@@ -29,7 +28,8 @@ int	ask_size_grid(t_game *game)
 	{
 		game->grid[i] = malloc(sizeof(int) * (game->column + 1));
 		if (!game->grid[i])
-			return (perror("malloc"), free_tab(), 1);
+			return (perror("allocation error"), free_tab(), 1);
+		i++;
 	}
 	return (0);
 }

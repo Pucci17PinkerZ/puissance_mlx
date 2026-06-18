@@ -2,8 +2,12 @@
 # define PUISSANCE_4_H
 
 
+/* ========== INCLUDES ========== */
 # include <stdio.h>
+# include <stdbool.h>
 
+
+/* ========== STRUCTURES ========== */
 typedef	struct s_sprite
 {
 	void		*img_coin_red;
@@ -39,6 +43,8 @@ typedef struct s_player
 	int tok_placed;
 }	t_player;
 
+
+/* ========== FUNCTIONS ========== */
 int		ask_size_grid(t_game *game);
 int		check_grid_size(int column, int row);
 void	hello_player(void);
