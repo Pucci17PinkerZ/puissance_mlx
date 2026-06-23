@@ -7,6 +7,7 @@ int main(void)
 	hello_player(void);
 	if (ask_size_grid(&game))
 		return (printf("pas good frrr"));
+	set_grid_zero();
 }
 
 int	ask_size_grid(t_game *game)
@@ -28,13 +29,43 @@ int	ask_size_grid(t_game *game)
 	{
 		game->grid[i] = malloc(sizeof(int) * (game->column + 1));
 		if (!game->grid[i])
-			return (perror("allocation error"), free_tab(), 1);
+			return (perror("allocation error"), free_tab(game->grid, i), 1);
 		i++;
 	}
 	return (0);
 }
 
 //fonction de clean
+char **free_tab(int **grid, int i)
+{
+	while (i > 0)
+	{
+		free(game->grid[i]);
+		i--;
+	}
+	free[grid];
+	return (NULL);
+}
+
+char **set_grid_zero(int **grid, int row, int column)
+{
+	int i;
+	int j;
+
+	i = row;
+	j = column;
+	while (grid[i])
+	{
+		while (grid[i][j])
+		{
+			grid[i][j] = 0;
+			j++;
+		}
+		i++;
+		j = 0;
+	}
+	return (grid);
+}
 
 int	check_grid_size(int column, int row)
 {
