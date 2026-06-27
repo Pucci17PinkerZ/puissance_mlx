@@ -43,7 +43,7 @@ char **free_tab(int **grid, int i)
 		free(game->grid[i]);
 		i--;
 	}
-	free[grid];
+	free[game->grid];
 	return (NULL);
 }
 
@@ -54,17 +54,17 @@ char **set_grid_zero(int **grid, int row, int column)
 
 	i = row;
 	j = column;
-	while (grid[i])
+	while (game->grid[i])
 	{
-		while (grid[i][j])
+		while (game->grid[i][j])
 		{
-			grid[i][j] = 0;
+			game->grid[i][j] = 0;
 			j++;
 		}
 		i++;
 		j = 0;
 	}
-	return (grid);
+	return (game->grid);
 }
 
 int	check_grid_size(int column, int row)
